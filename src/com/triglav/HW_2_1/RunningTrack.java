@@ -11,4 +11,18 @@ public class RunningTrack extends Obstacle{
     public int getDist() {
         return dist;
     }
+
+    @Override
+    protected boolean challenge(Move person) {
+        System.out.println(super.getName() + " расстояние: " + this.dist);
+        person.run();
+
+        if(getDist() <= person.getRunDis()){
+            System.out.println("прошел");
+            return true;
+        } else {
+            System.out.println("не прошел(");
+            return false;
+        }
+    }
 }

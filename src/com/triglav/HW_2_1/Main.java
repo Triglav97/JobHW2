@@ -23,9 +23,9 @@ public class Main {
 
         for (int i = 1; i <= obstaclesCount; i++){
             if(rand.nextBoolean()){
-                obstacles.add(new RunningTrack("Беговая дорога, препятствие номер " + i, rand.nextInt(rn-2) + 2));
+                obstacles.add(new RunningTrack("Беговая дорога, препятствие номер " + i, rand.nextInt(rn-5) + 2));
             }else{
-                obstacles.add(new Wall("Стена, перпятствие номер " + i, rand.nextInt(rn-2) + 2));
+                obstacles.add(new Wall("Стена, перпятствие номер " + i, rand.nextInt(rn-5) + 2));
             }
         }
         System.out.println();
@@ -42,6 +42,21 @@ public class Main {
             person.run(person.getRunDis());
         }
 
+        System.out.print("\nИспытания начались!!!!\n\n");
+        for(Move person : persons){
+            boolean res = true;
+            for(Obstacle obstacle : obstacles){
+                res = obstacle.challenge(person);
+                if(!res){
+                    System.out.println(person.getName()+ " не смог пройти " + obstacle.getName());
+                    break;
+                }
+            }
+            if(res){
+                System.out.println(person.getName() + " справился с испытанием!!!!");
+            }
+            System.out.println("___________________________________________");
+        }
 
     }
 }

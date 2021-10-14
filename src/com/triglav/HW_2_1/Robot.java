@@ -45,4 +45,9 @@ public class Robot implements Move{
     public int getJumpH() {
         return jumpH;
     }
+
+    @Override
+    public String getName() {
+        return name;
+    }
 }

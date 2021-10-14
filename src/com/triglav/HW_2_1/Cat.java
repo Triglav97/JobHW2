@@ -44,4 +44,9 @@ public class Cat implements Move{
     public int getJumpH() {
         return jumpH;
     }
+
+    @Override
+    public String getName() {
+        return name;
+    }
 }

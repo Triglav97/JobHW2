@@ -10,4 +10,6 @@ public abstract class Obstacle {
     public String getName() {
         return name;
     }
+
+    protected abstract boolean challenge(Move person);
 }

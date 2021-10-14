@@ -7,4 +7,5 @@ public interface Move {
     void run(int runDis);
     int getRunDis();
     int getJumpH();
+    String getName();
 }
