@@ -29,9 +29,15 @@ public class Main {
         for (String i : words){
             map.put(i, Collections.frequency(words,i));
         }
-        for(Map.Entry<String, Integer> entry : map.entrySet()){
-            System.out.println("Слово: \"" + entry.getKey() + "\" повторяется " + entry.getValue() + " раз(а)");
-        }
+//        while(map.entrySet().iterator().hasNext()){
+//            System.out.println("Слово: \"" + map.entrySet().iterator().next().getKey() + "\" повторяется " + map.entrySet().iterator().next().getValue() + " раз(а)");
+//        }
+        map.forEach((key, value) ->
+                System.out.println("Слово: \"" + key + "\" повторяется " + value + " раз(а)")
+                    );
+//        for(Map.Entry<String, Integer> entry : map.entrySet()){
+//            System.out.println("Слово: \"" + entry.getKey() + "\" повторяется " + entry.getValue() + " раз(а)");
+//        }
         System.out.println();
     }
 
