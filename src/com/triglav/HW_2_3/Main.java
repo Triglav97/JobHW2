@@ -6,7 +6,8 @@ public class Main {
     public static void main(String[] args) {
         Random rand = new Random();
         List<String> words = new ArrayList<>(randMassWords(rand.nextInt(20-10)+10));
-        repeatsWord(words);
+//        repeatsWord(words);
+        repeatsWord2(words);
     }
 
     public static void repeatsWord(List<String> words) {
@@ -19,6 +20,17 @@ public class Main {
                 }
             }
             System.out.println("Слово: \"" + setw + "\" повторяется " + i + " раз(а)");
+        }
+        System.out.println();
+    }
+
+    public static void repeatsWord2(List<String> words) {
+        Map<String, Integer> map = new HashMap<>();
+        for (String i : words){
+            map.put(i, Collections.frequency(words,i));
+        }
+        for(Map.Entry<String, Integer> entry : map.entrySet()){
+            System.out.println("Слово: \"" + entry.getKey() + "\" повторяется " + entry.getValue() + " раз(а)");
         }
         System.out.println();
     }
